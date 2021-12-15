@@ -49,6 +49,29 @@ class StatsServiceTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldFindMonthsUnderAverageSale() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+
+        int actual = service.underAverageSales(sales);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldFindMonthsOverAverageSale() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+
+        int actual = service.overAverageSales(sales);
+
+        assertEquals(expected, actual);
+    }
+
 }
 
 

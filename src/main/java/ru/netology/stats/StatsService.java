@@ -15,7 +15,6 @@ public class StatsService {
         return totalSales(sales) / sales.length;
     }
 
-
     /* Метод для определения номера месяца, в котором был пик продаж */
     public int maxSales(int[] sales) {
         int maxMonth = 0;
@@ -44,6 +43,26 @@ public class StatsService {
         return minMonth + 1;
     }
 
+    /* Метод для определения месяцев, в которых продажи ниже среднего */
+    public int underAverageSales(int[] sales) {
+        int month = 0;
+        for (int sale : sales) {
+            if (sale < averageSales(sales)) {
+                month++;
+            }
+        }
+        return month;
+    }
 
+    /* Метод для определения месяцев, в которых продажи выше среднего */
+    public int overAverageSales(int[] sales) {
+        int month = 0;
+        for (int sale : sales) {
+            if (sale > averageSales(sales)) {
+                month++;
+            }
+        }
+        return month;
+    }
 
 }
