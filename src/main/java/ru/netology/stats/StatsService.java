@@ -46,7 +46,7 @@ public class StatsService {
     /* Метод для определения месяцев, в которых продажи ниже среднего */
     public int underAverageSales(int[] sales) {
         int month = 0;
-        int averageSales = 15;
+        int averageSales = averageSales(sales);
         for (int sale : sales) {
             if (sale < averageSales) {
                 month++;
@@ -58,7 +58,7 @@ public class StatsService {
     /* Метод для определения месяцев, в которых продажи выше среднего */
     public int overAverageSales(int[] sales) {
         int month = 0;
-        int averageSales = 15;
+        int averageSales = averageSales(sales);
         for (int sale : sales) {
             if (sale > averageSales) {
                 month++;
